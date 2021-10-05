@@ -113,13 +113,13 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `autores`
 --
 ALTER TABLE `autores`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3
 
 --
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9
 
 --
 -- Restricciones para tablas volcadas
