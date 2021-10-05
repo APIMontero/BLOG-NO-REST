@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog De Viajes</title>
+    <link rel="stylesheet" href="stylesheets/estilos.css">
+    <link rel="stylesheet" href="stylesheets/mini-default.min.css">
+</head>
+
+<body>
+    <!-- 
+        /partials/encabezado_publico.ejs: 
+        errores al cargar el archivo haciendo un
+        include ./partials/encabezado_publico
+        se dejó el contendido del archivo en una etiqueta header:
+     -->
+    <header class="sticky" style="background-color: rgb(37, 36, 36);">
+        <div class="enlaces-registro">
+            <a href="#">Registro</a> |
+            <a href="#">Inicio</a>
+        </div>
+        <a href="#" class="logo" style="background-color: rgb(37, 36, 36); color:lightgreen;">Blog de Viajes</a>
+        <a href="#" class="button" style="background-color: rgb(37, 36, 36);color:blue;"><span class="icon-home" ></span> Inicio</a>
+        <a href="#" class="button" style="background-color: rgb(37, 36, 36);color:blue;"><span class="icon-user" ></span> Autores</a>
+    </header>
+    <div class="container" style="background-color: rgba(7, 75, 19, 0.911);">
+        <img src="images/fondo.jpg" width="100%">
+        <h1>Inicio</h1>
+        <p>Aquí nuestras últimas publicaciones:</p>
+        <div class="row">
+            <% publicaciones.forEach(publicacion => { %>
+                <div class="col-md-3">
+                    <div class="card shadowed">
+                        <h3 class="section">
+                            <a href="#">
+                                <%=publicacion.titulo%>
+                            </a> <mark class="tag" style="background-color: rgba(7, 75, 19, 0.911);">
+          <%=publicacion.votos%></mark></h3>
+                        <h6 class="section dark">
+                            <span class="icon-user"></span>
+                            <%=publicacion.pseudonimo %> -
+                                <span class="icon-calendar"></span>
+                                <%=publicacion.fecha_hora.getDate()<10 ? "0" + publicacion.fecha_hora.getDate(): publicacion.fecha_hora.getDate();%>/
+                                    <%=(publicacion.fecha_hora.getMonth()+1) < 10 ? "0" + (publicacion.fecha_hora.getMonth()+1): (publicacion.fecha_hora.getMonth()+1) %>/
+                                        <%=publicacion.fecha_hora.getFullYear()%>
+                        </h6>
+                        <p>
+                            <%= publicacion.resumen %>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+    <!-- 
+        /partials/pie.ejs: 
+        errores al cargar el archivo haciendo un
+        include ./partials/pie
+        se dejó el contendido del archivo:
+     -->
+    <footer style="background-color: rgb(37, 36, 36); color:lightgreen; ">
+        <p>Blog de Viajes - Comparte tu experiencia - Derechos Reservados</p>
+    </footer>
+    <script src="javascripts/script.js "></script>
+</body>
+
+</html>
