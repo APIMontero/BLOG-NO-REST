@@ -1,4 +1,4 @@
-# BLOG-NO-REST
+:construction: # BLOG-NO-REST
 Un blog sencillo.
 
 ## Preparacion ambiente desarrollo
